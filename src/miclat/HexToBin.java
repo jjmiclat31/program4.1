@@ -18,7 +18,7 @@ public class HexToBin {
     public static String DecToBin(int input) {
         int _i = input;
         String s;
-        String zeroes = "000";
+        String zeroes = "0000";
         String output = "";
         int q;
         int r;
