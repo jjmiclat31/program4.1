@@ -12,29 +12,32 @@ public class HexToBin {
         if (isHex) {
             return hexadecimals.indexOf(hexadecimalNumber);
         } else {
-            return -1;
+            return -1; //all characters that not in hexadecimals will return -1
         }
     }
     public static String DecToBin(int input) {
         int _i = input;
-        String s;
-        String zeroes = "000";
-        String output = "";
-        int q;
-        int r;
+        String s; //created for remainder
+        String zeroes = "000"; //to add zeroes to output
+        String output = ""; //remainders will be written here
+        int q; //quotient
+        int r; //remainder
         while (_i != 0) {
             q = _i/2;
             r = _i%2;
             s = String.valueOf(r);
-            output = s.concat(output);
+            output = s.concat(output); //adds remainder in the beginning of output
             _i = q;
         }
+
         output = zeroes + output;
-        boolean binLenIs4 = output.length() == 4;
+
+
+        boolean binLenIs4 = output.length() == 4; //check if output is 4 digits only
         if (binLenIs4)
             return output;
         else
-            return output.substring(output.length()-4);
+            return output.substring(output.length()-4); // returns the last 4 digits only
     }
 
     public static void main(String[] args) {
